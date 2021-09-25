@@ -1,7 +1,11 @@
 <template>
   <div class="page" data-name="home">
     <!-- Scrollable page content-->
-    <div class="page-content"></div>
+    <div class="page-content">
+      <div class="block block-strong">
+        <div class="button" href="/login/">Test</div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
