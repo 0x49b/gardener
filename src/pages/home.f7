@@ -22,7 +22,7 @@
       <div class="fab fab-extended fab-left-top">
         <a href="#">
           <img class="img-seed" src="../assets/img/seed.svg" />
-          <div class="fab-text">2585</div>
+          <div class="fab-text count pixel" data-target="2585">0</div>
         </a>
       </div>
 
@@ -54,7 +54,29 @@
   </div>
 </template>
 <script>
-  export default () => {
-    return $render;
-  };
+    export default () => {
+
+        window.addEventListener('load', () => {
+            const counters = document.querySelectorAll('.count');
+            const speed = 500;
+
+            counters.forEach((counter) => {
+                const updateCount = () => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const count = parseInt(counter.innerText);
+                    const increment = Math.trunc(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        })
+
+        return $render;
+    };
 </script>
