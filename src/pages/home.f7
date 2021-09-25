@@ -1,49 +1,56 @@
 <template>
-  <div class="page" data-name="homePage" id="page_">
-    <div class="navbar navbar-transparent">
-      <div class="navbar-bg"></div>
-      <div class="navbar-inner"></div>
-    </div>
-    <!-- Scrollable page content-->
-    <div class="page-content">
-      <div class="block-title greeting" style="text-align: center"></div>
-      <div class="fab fab-extended fab-left-top">
-        <a href="#">
-          <img class="img-seed" src="../assets/img/seed.svg" />
-          <div class="fab-text count pixel" data-target="2585">0</div>
-        </a>
-      </div>
+    <div class="page" data-name="homePage" id="page_">
 
-      <div class="fab fab-right-top">
-        <a href=""> <img class="img-info" src="../assets/img/farmer.svg" /></a>
-        <a href="">
-          <img class="img-info" src="../assets/img/watering-can.svg"
-        /></a>
-        <a href=""><img class="img-info" src="../assets/img/info.svg" /></a>
-      </div>
-      <div>
-        <img
-          class="floating loadingScreenCloud"
-          id="mainScreenCloudLeft"
-          src="../assets/img/cloud-left.svg"
-          alt="cloud-left"
-        />
-        <img
-          class="floating1 loadingScreenCloud"
-          id="mainScreenCloudRight"
-          src="../assets/img/cloud-right.svg"
-          alt="cloud-right"
-        />
-      </div>
-      <img class="flowerarea" src="../assets/img/full-plant-l3-day.svg" />
+        <div class="navbar navbar-transparent">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner"></div>
+        </div>
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <div class="block-title greeting" style="text-align: center"></div>
+            <div class="fab fab-extended fab-left-top">
+                <a href="#">
+                    <img class="img-seed" src="../assets/img/seed.svg"/>
+                    <div class="fab-text count pixel" data-target="2585">0</div>
+                </a>
+            </div>
 
-      <div class="block flowerDiv"></div>
+            <div class="fab fab-right-top">
+                <a href=""> <img class="img-info" id="user-info" src="../assets/img/farmer.svg"/></a>
+                <!--a href="">
+                  <img class="img-info" src="../assets/img/watering-can.svg"/>
+              </a>
+                <a href=""><img class="img-info" src="../assets/img/info.svg" /></a-->
+            </div>
+            <div>
+                <img
+                        class="floating loadingScreenCloud"
+                        id="mainScreenCloudLeft"
+                        src="../assets/img/cloud-left.svg"
+                        alt="cloud-left"/>
+                <img
+                        class="floating1 loadingScreenCloud"
+                        id="mainScreenCloudRight"
+                        src="../assets/img/cloud-right.svg"
+                        alt="cloud-right"/>
+            </div>
+            <img class="flowerarea" src="../assets/img/full-plant-l3-day.svg"/>
 
-      <div class="gardener-block">
-        <img id="gardener-font" src="../assets//img/gardener-night.svg"/>
+            <div class="block flowerDiv"></div>
+
+            <div class="gardener-block">
+                <img id="gardener-font" src="../assets//img/gardener-night.svg"/>
+            </div>
+        </div>
+
+
+        <div class="popup" id="user-modal" data-swipe-to-close="to-bottom">
+            Any HTML content goes here
+        </div>
+
+
     </div>
-    </div>
-  </div>
+
 </template>
 <script>
     export default () => {
