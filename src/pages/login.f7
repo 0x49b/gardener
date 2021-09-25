@@ -2,7 +2,7 @@
   <div class="page" data-name="loginPage">
     <div class="page-content">
       <div class="login-screen-title">
-        <img src="../img/migros-m.svg" height="100px" />
+        <img src="../assets/img/migros-m.svg" height="100px" />
       </div>
       <form class="login-form">
         <div class="list inset no-hairlines">
