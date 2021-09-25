@@ -20,7 +20,7 @@ import App from '../app.f7';
 
 var app = new Framework7({
   name: 'Gardener', // App name
-  theme: 'auto', // Automatic theme detection
+  theme: 'ios', // Automatic theme detection
   el: '#app', // App root element
   component: App, // App main component
 
@@ -33,3 +33,4 @@ var app = new Framework7({
     path: '/service-worker.js',
   } : {},
 });
+export default app;
