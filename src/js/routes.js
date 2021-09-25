@@ -3,11 +3,11 @@ import LoginPage from "../pages/login.f7";
 import MainPage from "../pages/home.f7";
 
 var routes = [{
-        path: "/login",
+        path: "/",
         component: LoginPage,
     },
     {
-        path: "/",
+        path: "/loading",
         component: LoadingPage,
     },
     {
