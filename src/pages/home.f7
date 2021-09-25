@@ -1,11 +1,82 @@
 <template>
-  <div class="page" data-name="home">
+  <div class="page" data-name="homePage">
+    <div class="navbar navbar-transparent">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner">
+        <!-- <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span>Back</span>
+          </a> 
+        </div>
+        <div class="right">
+          <a href="#" class="link">
+            <i class="icon another-icon"></i>
+            <span>Menu</span>
+          </a>
+        </div>-->
+      </div>
+    </div>
     <!-- Scrollable page content-->
-    <div class="page-content"></div>
+    <div class="page-content">
+      <div class="fab fab-extended fab-left-top">
+        <a href="#">
+          <img class="img-seed" src="../assets/img/seed.svg" />
+          <div class="fab-text count pixel" data-target="2585">0</div>
+        </a>
+      </div>
+
+      <div class="fab fab-right-top">
+        <a href=""> <img class="img-info" src="../assets/img/farmer.svg" /></a>
+        <a href="">
+          <img class="img-info" src="../assets/img/watering-can.svg"
+        /></a>
+        <a href=""><img class="img-info" src="../assets/img/info.svg" /></a>
+      </div>
+      <div>
+        <img
+          class="floating loadingScreenCloud"
+          id="mainScreenCloudLeft"
+          src="../assets/img/cloud-left.svg"
+          alt="cloud-left"
+        />
+        <img
+          class="floating1 loadingScreenCloud"
+          id="mainScreenCloudRight"
+          src="../assets/img/cloud-right.svg"
+          alt="cloud-right"
+        />
+      </div>
+      <img class="flowerarea" src="../assets/img/full-plant-l3-day.svg" />
+
+      <div class="block flowerDiv"></div>
+    </div>
   </div>
 </template>
 <script>
-  export default () => {
-    return $render;
-  };
+    export default () => {
+
+        window.addEventListener('load', () => {
+            const counters = document.querySelectorAll('.count');
+            const speed = 500;
+
+            counters.forEach((counter) => {
+                const updateCount = () => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const count = parseInt(counter.innerText);
+                    const increment = Math.trunc(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        })
+
+        return $render;
+    };
 </script>

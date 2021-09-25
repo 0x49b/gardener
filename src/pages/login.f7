@@ -2,7 +2,7 @@
   <div class="page" data-name="loginPage">
     <div class="page-content">
       <div class="login-screen-title">
-        <img src="../img/migros-m.svg" height="100px" />
+        <img src="../assets/img/migros-m.svg" height="100px" />
       </div>
       <form class="login-form">
         <div class="list inset no-hairlines">
@@ -43,15 +43,8 @@
               href="#"
               >LOGIN</a
             >
-</div>
-<div>
-            <a class="list inset" id="skipLoginBtn">
-              <div>
-                <a id="skipLogin" class="button button-large button-fill convert-form-to-data" href="/loading">SKIP LOGIN</a>
-              </div>
-            </a>
-
           </div>
+          <div></div>
           <div class="block-footer">
             <p>
               Gardener. <br />A project realised by Florian, Prasun and Jeremiah
@@ -64,7 +57,7 @@
   </div>
 </template>
 <script>
-    export default () => {
-        return $render;
-    };
+  export default () => {
+    return $render;
+  };
 </script>

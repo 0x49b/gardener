@@ -1,4 +1,3 @@
-
 /* Custom color theme properties */
 :root {
   --f7-theme-color: #ff6700;
@@ -6,17 +5,33 @@
   --f7-theme-color-shade: #d65700;
   --f7-theme-color-tint: #ff7f29;
 }
-
-
-.pixel{
-  font-family: 'Press Start 2P', sans-serif;
+@media screen and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
 
+.pixel {
+  font-family: "Press Start 2P", sans-serif;
+}
 
 /* Your app custom styles here */
 
 [data-name="loginPage"] {
   background-image: url(../img/sky-day.svg);
+  background-size: cover;
+}
+[data-name="homePage"] {
+  //background-image: url(../img/sky-day.svg);
+  background-color: rgba(67, 203, 255);
+  background-image: linear-gradient(rgba(67, 203, 255), rgba(199, 243, 254));
+  background-size: cover;
   background-size: cover;
 }
 .login-screen-title {
@@ -47,45 +62,56 @@
   width: fit-content;
 }
 
-
 /* Loading Screen */
 [data-name="loadingPage"] {
   /*background-image: url(../img/sky-day.svg);*/
   padding-top: 5em;
-  background-color: rgba(67,203,255);
-  background-image: linear-gradient(rgba(67,203,255), rgba(199,243,254));
+  background-color: rgba(67, 203, 255);
+  background-image: linear-gradient(rgba(67, 203, 255), rgba(199, 243, 254));
   background-size: cover;
   text-align: center;
 }
 
-.loadingScreenCloud{
+.loadingScreenCloud {
   max-height: 80px;
   width: auto;
 }
 
-#loadingScreenMessage{
+#loadingScreenMessage {
   position: relative;
   top: 5em;
   font-size: 20px;
 }
 
-#loadingScreenMigrosM{
+#loadingScreenMigrosM {
   position: relative;
-  top: 5em
+  top: 5em;
 }
 
-#loadingScreenCloudLeft{
+#loadingScreenCloudLeft {
   position: relative;
   left: -2.5em;
 }
 
-#loadingScreenCloudRight{
+#loadingScreenCloudRight {
   position: relative;
   right: -2.5em;
   top: 1em;
 }
 
-.floating { 
+#mainScreenCloudLeft {
+  position: relative;
+  top: 12em;
+  left: -0.5em;
+}
+
+#mainScreenCloudRight {
+  position: relative;
+  right: -2.5em;
+  top: 15em;
+}
+
+.floating {
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -94,7 +120,7 @@
   margin-top: 5px;
 }
 
-.floating1 { 
+.floating1 {
   animation-name: floating;
   animation-duration: 4s;
   animation-iteration-count: infinite;
@@ -104,9 +130,48 @@
 }
 
 @keyframes floating {
-  0% { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 15px); }
-  100%   { transform: translate(0, -0px); }   
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
+.fab a {
+  background-color: transparent;
+  margin-bottom: 20px;
+  box-shadow: none;
+  color: black;
+}
+.fab .img-seed {
+  height: 80%;
+  padding-right: 10px;
+}
+.fab .img-info {
+  height: 80%;
+}
 
+.fab-text {
+  padding: 0;
+  font-size: 25px;
+}
+
+.fab-opened .fab-buttons a {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.fab-left-top {
+  width: 130px !important;
+}
+
+.flowerarea {
+  margin: 4rem;
+  position: absolute;
+  bottom: 2em;
+}
