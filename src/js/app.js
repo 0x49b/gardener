@@ -1,6 +1,7 @@
-import $, {val, value} from "dom7";
+import $, {add, val, value} from "dom7";
 import Framework7 from "framework7/bundle";
 import {loadingUserData} from "./loading";
+import {addToLocaleStorage} from "./helper";
 
 // Import F7 Styles
 import "framework7/framework7-bundle.css";
@@ -82,43 +83,45 @@ async function startListeners() {
 
             const today = new Date();
 
-            const gardenerFont = document.getElementById("gardener-font");
 
-            if (today >= eveningTime) {
+            if (today <= eveningTime) {
                 console.log("nsdnvfklassas");
                 greetingText = greetingText + " Evening!";
                 greetingTitle.text(greetingText);
                 $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
-                //gardenerFont.src = "../assets/img/gardener-night.svg";
                 $("body").addClass("theme-dark");
+                addToLocaleStorage('day', false);
+
             } else if (today >= afternoontime) {
                 console.log("asasasass");
                 greetingText = greetingText + " Afternoon!";
                 greetingTitle.text(greetingText);
                 $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
-                //gardenerFont.src = "../assets/img/gardener-day.svg";
                 $("body").removeClass("theme-dark");
+                addToLocaleStorage('day', true);
+
             } else if (today >= datetime) {
                 console.log("nsdnvfkl");
                 greetingText = greetingText + " Morning!";
                 greetingTitle.text(greetingText);
                 $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
                 $("body").removeClass("theme-dark");
-                //gardenerFont.src = "../assets/img/gardener-day.svg";
+                addToLocaleStorage('day', true);
+
             } else if (today >= morningTime) {
                 console.log("nsdnvfkl");
                 greetingText = greetingText + " Morning!";
                 greetingTitle.text(greetingText);
                 $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
                 $("body").addClass("theme-dark");
-                ///gardenerFont.src = "../assets/img/gardener-night.svg";
+                addToLocaleStorage('day', false);
             } else if (today < morningTime) {
                 console.log("nsdnvfkl");
                 greetingText = greetingText + " Night!";
                 greetingTitle.text(greetingText);
                 $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
                 $("body").addClass("theme-dark");
-                //gardenerFont.src = "../assets/img/gardener-night.svg";
+                addToLocaleStorage('day', false);
             }
         });
 
@@ -134,13 +137,13 @@ async function startListeners() {
             console.log("Logged in as " + formData.username);
             mainView.router.navigate({name: "loading"});
             mainView.router.on("routeChanged", () => {
-                loadingUserData(mainView);
+                loadingUserData(mainView, true);
             })
         }
     });
-
-
 }
+
+
 
 
 export default app;
