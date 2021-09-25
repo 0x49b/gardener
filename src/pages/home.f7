@@ -1,5 +1,6 @@
 <template>
   <div class="page" data-name="homePage" id="page_">
+
     <div class="navbar navbar-transparent">
       <div class="navbar-bg"></div>
       <div class="navbar-inner"></div>
@@ -15,25 +16,23 @@
       </div>
 
       <div class="fab fab-right-top">
-        <a href=""> <img class="img-info" src="../assets/img/farmer.svg" /></a>
-        <a href="">
-          <img class="img-info" src="../assets/img/watering-can.svg"
-        /></a>
-        <a href=""><img class="img-info" src="../assets/img/info.svg" /></a>
+        <a href=""> <img class="img-info" id="user-info" src="../assets/img/farmer.svg" /></a>
+        <!--a href="">
+          <img class="img-info" src="../assets/img/watering-can.svg"/>
+      </a>
+        <a href=""><img class="img-info" src="../assets/img/info.svg" /></a-->
       </div>
       <div>
         <img
           class="floating loadingScreenCloud"
           id="mainScreenCloudLeft"
           src="../assets/img/cloud-left.svg"
-          alt="cloud-left"
-        />
+          alt="cloud-left"/>
         <img
           class="floating1 loadingScreenCloud"
           id="mainScreenCloudRight"
           src="../assets/img/cloud-right.svg"
-          alt="cloud-right"
-        />
+          alt="cloud-right"/>
       </div>
       <img class="flowerarea" src="../assets/img/full-plant-l3-day.svg" />
 
@@ -43,7 +42,17 @@
         <img id="gardener-font" src="../assets//img/gardener-night.svg"/>
     </div>
     </div>
+
+    
+
+
+    <div class="popup" id="user-modal" data-swipe-to-close="to-bottom">
+      Any HTML content goes here
+    </div>
+
+
   </div>
+
 </template>
 <script>
     export default () => {
