@@ -117,3 +117,5 @@ out/
 package-lock.json
 
 /www/*,idea
+
+*.cache
