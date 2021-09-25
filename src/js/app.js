@@ -137,7 +137,7 @@ async function startListeners() {
             console.log("Logged in as " + formData.username);
             mainView.router.navigate({name: "loading"});
             mainView.router.on("routeChanged", () => {
-                loadingUserData(mainView, true);
+                loadingUserData(mainView, false);
             })
         }
     });
