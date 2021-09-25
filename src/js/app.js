@@ -46,7 +46,11 @@ var app = new Framework7({
 
 function startListeners() {
   $(".convert-form-to-data").on("click", function () {
-    if (document.querySelector(".input-invalid")) {
+    if (
+      document.querySelector(".input-invalid") ||
+      document.querySelector("input[name=username]").value == "" ||
+      document.querySelector("input[name=password]").value == ""
+    ) {
       app.dialog.alert("Please provide correct data", "Invalid Input(s)");
     } else {
       var formData = app.form.convertToData(".login-form");
