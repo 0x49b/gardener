@@ -57,13 +57,20 @@ if ("geolocation" in navigator) {
 
 async function startListeners() {
   var mainView = app.view.main;
+  var greetingText = "Good ";
   app.request
-    .json(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}`)
+    .json(
+      `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today&formatted=0`
+    )
     .then((res) => {
       var sunrise = res.data.results.sunrise;
       var sunset = res.data.results.sunset;
-      var solar_noon = res.data.results.sunset;
-      console.log(sunrise);
+      var solar_noon = res.data.results.solar_noon;
+
+      console.log(new Date(sunrise));
+      console.log(new Date(sunset));
+      console.log(new Date(solar_noon));
+      console.log(new Date(solar_noon).getTime() - new Date(sunrise).getTime());
     });
   $(".convert-form-to-data").on("click", async function () {
     if (
