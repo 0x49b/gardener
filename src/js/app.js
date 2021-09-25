@@ -58,6 +58,11 @@ if ("geolocation" in navigator) {
 async function startListeners() {
   var mainView = app.view.main;
   var greetingText = "Good ";
+  var daytime;
+  var nighttime;
+  var afternoontime;
+  var morningTime;
+  var eveningTime;
   app.request
     .json(
       `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today&formatted=0`
@@ -67,10 +72,40 @@ async function startListeners() {
       var sunset = res.data.results.sunset;
       var solar_noon = res.data.results.solar_noon;
 
-      console.log(new Date(sunrise));
-      console.log(new Date(sunset));
-      console.log(new Date(solar_noon));
-      console.log(new Date(solar_noon).getTime() - new Date(sunrise).getTime());
+      nighttime = new Date(sunset);
+      afternoontime = new Date(solar_noon);
+      morningTime = new Date(sunrise);
+
+      const timeDiff =
+        new Date(solar_noon).getTime() - new Date(sunrise).getTime();
+      daytime = new DataTransfer(morningTime.getTime() + timeDiff / 3);
+      eveningTime = new Date(nighttime.getTime() - timeDiff / 3);
+
+      const today = new Date();
+      console.log(today);
+      console.log(eveningTime);
+
+      if (today >= eveningTime) {
+        console.log("nsdnvfklassas");
+        greetingText = greetingText + " Evening!";
+        $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
+      } else if (today >= afternoontime) {
+        console.log("asasasass");
+        greetingText = greetingText + " Afteroon!";
+        $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
+      } else if (today >= datetime) {
+        console.log("nsdnvfkl");
+        greetingText = greetingText + " Morning!";
+        $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
+      } else if (today >= morningTime) {
+        console.log("nsdnvfkl");
+        greetingText = greetingText + " Morning!";
+        $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
+      } else if (today < morningTime) {
+        console.log("nsdnvfkl");
+        greetingText = greetingText + " Night!";
+        $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
+      }
     });
   $(".convert-form-to-data").on("click", async function () {
     if (
