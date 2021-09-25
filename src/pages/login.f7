@@ -1,18 +1,15 @@
 <template>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <div class="page" data-name="login">
     <!-- Scrollable page content-->
     <div class="page-content">
       <div class="block block-strong">
         <p>Here is your blank Framework7 app. Let's see what we have here.</p>
       </div>
-
     </div>
   </div>
 </template>
 <script>
 export default () => {
   return $render;
-}
+  };
 </script>

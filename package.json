@@ -21,12 +21,13 @@
   ],
   "dependencies": {
     "dom7": "^3.0.0",
+    "firebase": "9.1.0",
+    "firebaseui": "^5.0.0",
     "framework7": "^6.3.4",
     "framework7-icons": "^5.0.3",
     "material-icons": "^1.4.1",
     "skeleton-elements": "^3.5.0",
-    "swiper": "^6.8.4",
-    "firebase": "9.1.0"
+    "swiper": "^6.8.4"
   },
   "devDependencies": {
     "cpy-cli": "^3.1.1",
