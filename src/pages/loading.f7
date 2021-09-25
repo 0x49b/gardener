@@ -1,5 +1,5 @@
 <template>
-  <div class="page" data-name="loadingPage">
+  <div class="page" data-name="loadingPage" id="page_">
     <!-- Scrollable page content-->
     <div class="page-content">
       <img

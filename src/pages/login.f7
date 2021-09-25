@@ -1,5 +1,5 @@
 <template>
-  <div class="page" data-name="loginPage">
+  <div class="page" data-name="loginPage" id="page_">
     <div class="page-content">
       <div class="login-screen-title">
         <img src="../assets/img/migros-m.svg" height="100px" />

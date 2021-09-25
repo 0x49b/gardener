@@ -4,15 +4,18 @@ import MainPage from "../pages/home.f7";
 
 var routes = [
   {
-    path: "/home",
+    path: "/",
+    name: "login",
     component: LoginPage,
   },
   {
     path: "/loading",
+    name: "loading",
     component: LoadingPage,
   },
   {
-    path: "/",
+    path: "/home",
+    name: "home",
     component: MainPage,
   },
 ];
