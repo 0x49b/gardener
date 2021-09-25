@@ -1,8 +1,8 @@
 <template>
-  <div class="page" data-name="loginPage" id="page_">
+  <div class="page darkTheme" data-name="loginPage" id="page_">
     <div class="page-content">
       <div class="login-screen-title">
-        <img src="../assets/img/migros-m.svg" height="100px" />
+        <img src="../assets/img/migros-m.svg" height="200px" />
       </div>
       <form class="login-form">
         <div class="list inset no-hairlines">
@@ -57,7 +57,7 @@
   </div>
 </template>
 <script>
-  export default () => {
-    return $render;
-  };
+    export default () => {
+        return $render;
+    };
 </script>

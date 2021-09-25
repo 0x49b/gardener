@@ -17,112 +17,159 @@ import store from "./store.js";
 import App from "../app.f7";
 
 var app = new Framework7({
-  name: "Gardener", // App name
-  theme: "ios", // Automatic theme detection
-  el: "#app", // App root element
-  component: App, // App main component
+    name: "Gardener", // App name
+    theme: "ios", // Automatic theme detection
+    el: "#app", // App root element
+    component: App, // App main component
 
-  on: {
-    init: function () {
-      console.log("App initialized");
+    on: {
+        init: function() {
+            console.log("App initialized");
+        },
+        pageInit: async function() {
+            console.log("Page initialized");
+            await startListeners();
+        },
     },
-    pageInit: async function () {
-      console.log("Page initialized");
-      await startListeners();
-    },
-  },
-  // App store
-  store: store,
-  // App routes
-  routes: routes,
-  // Register service worker (only on production build)
-  serviceWorker:
-    process.env.NODE_ENV === "production"
-      ? {
-          path: "/service-worker.js",
-        }
-      : {},
+    // App store
+    store: store,
+    // App routes
+    routes: routes,
+    // Register service worker (only on production build)
+    serviceWorker: process.env.NODE_ENV === "production" ? {
+        path: "/service-worker.js",
+    } : {},
 });
 var lat = 46.743552;
 var lng = 9.5551488;
 
 if ("geolocation" in navigator) {
-  navigator.geolocation.getCurrentPosition((position) => {
-    lat = position.coords.latitude;
-    lng = position.coords.longitude;
-  });
+    navigator.geolocation.getCurrentPosition((position) => {
+        lat = position.coords.latitude;
+        lng = position.coords.longitude;
+    });
 } else {
-  //return ["5:47:11 AM", "5:55:59 PM", "11:51:35 AM"]; // Zurich, 25-09-2021
+    //return ["5:47:11 AM", "5:55:59 PM", "11:51:35 AM"]; // Zurich, 25-09-2021
 }
 
 async function startListeners() {
-  var mainView = app.view.main;
-  var greetingText = "Good ";
-  var daytime;
-  var nighttime;
-  var afternoontime;
-  var morningTime;
-  var eveningTime;
-  const greetingTitle = $(".greeting");
-  app.request
-    .json(
-      `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today&formatted=0`
-    )
-    .then((res) => {
-      var sunrise = res.data.results.sunrise;
-      var sunset = res.data.results.sunset;
-      var solar_noon = res.data.results.solar_noon;
+    var mainView = app.view.main;
+    var greetingText = "Good ";
+    var daytime;
+    var nighttime;
+    var afternoontime;
+    var morningTime;
+    var eveningTime;
+    const greetingTitle = $(".greeting");
+    app.request
+        .json(
+            `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today&formatted=0`
+        )
+        .then((res) => {
+            var sunrise = res.data.results.sunrise;
+            var sunset = res.data.results.sunset;
+            var solar_noon = res.data.results.solar_noon;
 
-      nighttime = new Date(sunset);
-      afternoontime = new Date(solar_noon);
-      morningTime = new Date(sunrise);
+            nighttime = new Date(sunset);
+            afternoontime = new Date(solar_noon);
+            morningTime = new Date(sunrise);
 
-      const timeDiff =
-        new Date(solar_noon).getTime() - new Date(sunrise).getTime();
-      daytime = new DataTransfer(morningTime.getTime() + timeDiff / 3);
-      eveningTime = new Date(nighttime.getTime() - timeDiff / 3);
+            const timeDiff =
+                new Date(solar_noon).getTime() - new Date(sunrise).getTime();
+            daytime = new DataTransfer(morningTime.getTime() + timeDiff / 3);
+            eveningTime = new Date(nighttime.getTime() - timeDiff / 3);
 
-      const today = new Date();
+            const today = new Date();
 
-      if (today >= eveningTime) {
-        console.log("nsdnvfklassas");
-        greetingText = greetingText + " Evening!";
-        greetingTitle.text(greetingText);
-        $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
-      } else if (today >= afternoontime) {
-        console.log("asasasass");
-        greetingText = greetingText + " Afteroon!";
-        greetingTitle.text(greetingText);
-        $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
-      } else if (today >= datetime) {
-        console.log("nsdnvfkl");
-        greetingText = greetingText + " Morning!";
-        greetingTitle.text(greetingText);
-        $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
-      } else if (today >= morningTime) {
-        console.log("nsdnvfkl");
-        greetingText = greetingText + " Morning!";
-        greetingTitle.text(greetingText);
-        $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
-      } else if (today < morningTime) {
-        console.log("nsdnvfkl");
-        greetingText = greetingText + " Night!";
-        greetingTitle.text(greetingText);
-        $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
-      }
+            const gardenerFont = document.getElementById("gardener-font");
+
+            if (today >= eveningTime) {
+                console.log("nsdnvfklassas");
+                greetingText = greetingText + " Evening!";
+                greetingTitle.text(greetingText);
+                $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
+                //gardenerFont.src = "../assets/img/gardener-night.svg";
+                $("body").addClass("theme-dark");
+            } else if (today >= afternoontime) {
+                console.log("asasasass");
+                greetingText = greetingText + " Afternoon!";
+                greetingTitle.text(greetingText);
+                $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
+                //gardenerFont.src = "../assets/img/gardener-day.svg";
+                $("body").removeClass("theme-dark");
+            } else if (today >= datetime) {
+                console.log("nsdnvfkl");
+                greetingText = greetingText + " Morning!";
+                greetingTitle.text(greetingText);
+                $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
+                $("body").removeClass("theme-dark");
+                //gardenerFont.src = "../assets/img/gardener-day.svg";
+            } else if (today >= morningTime) {
+                console.log("nsdnvfkl");
+                greetingText = greetingText + " Morning!";
+                greetingTitle.text(greetingText);
+                $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
+                $("body").addClass("theme-dark");
+                ///gardenerFont.src = "../assets/img/gardener-night.svg";
+            } else if (today < morningTime) {
+                console.log("nsdnvfkl");
+                greetingText = greetingText + " Night!";
+                greetingTitle.text(greetingText);
+                $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
+                $("body").addClass("theme-dark");
+                //gardenerFont.src = "../assets/img/gardener-night.svg";
+            }
+        });
+
+    $(".convert-form-to-data").on("click", async function() {
+        if (
+            document.querySelector(".input-invalid") ||
+            document.querySelector("input[name=username]").value == "" ||
+            document.querySelector("input[name=password]").value == ""
+        ) {
+            app.dialog.alert("Please provide correct data", "Invalid Input(s)");
+        } else {
+            var formData = app.form.convertToData(".login-form");
+            console.log("Logged in as " + formData.username);
+            mainView.router.navigate({ name: "loading" });
+
+
+
+        }
     });
-  $(".convert-form-to-data").on("click", async function () {
-    if (
-      document.querySelector(".input-invalid") ||
-      document.querySelector("input[name=username]").value == "" ||
-      document.querySelector("input[name=password]").value == ""
-    ) {
-      app.dialog.alert("Please provide correct data", "Invalid Input(s)");
-    } else {
-      var formData = app.form.convertToData(".login-form");
-      console.log("Logged in as " + formData.username);
-      mainView.router.navigate({ name: "home" });
-    }
-  });
 }
+
+
+
+function loadingAnimation() {
+
+
+    const loadingMessages = [
+        "Starting your Garden",
+        "Raking Grounds",
+        "Planting Trees",
+        "Watering Plants",
+        "Adjusting Sunlight",
+        "Hooray",
+    ];
+
+    let i = 1;
+
+    const loadingMessage = document.getElementById("loadingScreenMessage");
+
+    loadingMessage.innerText = loadingMessages[0];
+
+    setInterval(() => {
+        if (i < loadingMessages.length) {
+            loadingMessage.innerText = loadingMessages[i];
+            i++;
+        } else {
+            loadingMessage.innerText =
+                loadingMessages[loadingMessages.length - 1];
+        }
+    }, Math.random() * (3500 - 1000) + 1000);
+
+}
+
+
 export default app;
