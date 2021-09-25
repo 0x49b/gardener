@@ -31,6 +31,10 @@
         <a href=""> <img class="img-info" src="../img/watering-can.svg" /></a>
         <a href=""><img class="img-info" src="../img/info.svg" /></a>
       </div>
+<div>
+      <img class="floating loadingScreenCloud" id="mainScreenCloudLeft" src="../img/cloud-left.svg" alt="cloud-left"/>
+      <img class="floating1 loadingScreenCloud" id="mainScreenCloudRight" src="../img/cloud-right.svg" alt="cloud-right"/>
+    </div>
       <img class="flowerarea" src="../img/full-plant-l3-day.svg" />
 
       <div class="block flowerDiv"></div>
@@ -38,7 +42,7 @@
   </div>
 </template>
 <script>
-  export default () => {
-    return $render;
-  };
+    export default () => {
+        return $render;
+    };
 </script>

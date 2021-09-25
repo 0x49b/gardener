@@ -17,7 +17,10 @@
   background-size: cover;
 }
 [data-name="homePage"] {
-  background-image: url(../img/sky-day.svg);
+  //background-image: url(../img/sky-day.svg);
+  background-color: rgba(67, 203, 255);
+  background-image: linear-gradient(rgba(67, 203, 255), rgba(199, 243, 254));
+  background-size: cover;
   background-size: cover;
 }
 .login-screen-title {
@@ -63,6 +66,7 @@
   width: auto;
 }
 
+
 #loadingScreenMessage {
   position: relative;
   top: 5em;
@@ -83,6 +87,19 @@
   position: relative;
   right: -2.5em;
   top: 1em;
+}
+
+
+#mainScreenCloudLeft {
+  position: relative;
+  top: 12em;
+  left: -.5em;
+}
+
+#mainScreenCloudRight {
+  position: relative;
+  right: -2.5em;
+  top: 15em;
 }
 
 .floating {
@@ -116,7 +133,7 @@
 }
 
 .fab a {
-  //background-color: transparent;
+  background-color: transparent;
   margin-bottom: 20px;
   box-shadow: none;
   color: black;
@@ -142,4 +159,12 @@
 
 .fab-left-top {
   width: 130px !important;
+}
+
+
+.flowerarea{
+  margin: 4rem;
+  position: absolute;
+  bottom: 2em;
+
 }
