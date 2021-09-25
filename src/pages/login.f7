@@ -43,15 +43,8 @@
               href="#"
               >LOGIN</a
             >
-</div>
-<div>
-            <a class="list inset" id="skipLoginBtn">
-              <div>
-                <a id="skipLogin" class="button button-large button-fill convert-form-to-data" href="/loading">SKIP LOGIN</a>
-              </div>
-            </a>
-
           </div>
+          <div></div>
           <div class="block-footer">
             <p>
               Gardener. <br />A project realised by Florian, Prasun and Jeremiah
@@ -64,7 +57,7 @@
   </div>
 </template>
 <script>
-    export default () => {
-        return $render;
-    };
+  export default () => {
+    return $render;
+  };
 </script>

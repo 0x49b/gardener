@@ -1,4 +1,4 @@
-import $ from "dom7";
+import $, { val, value } from "dom7";
 import Framework7 from "framework7/bundle";
 
 // Import F7 Styles
@@ -28,7 +28,7 @@ var app = new Framework7({
     },
     pageInit: async function () {
       console.log("Page initialized");
-      startListeners();
+      await startListeners();
     },
   },
   // App store
@@ -43,9 +43,29 @@ var app = new Framework7({
         }
       : {},
 });
+var lat = 46.743552;
+var lng = 9.5551488;
 
-function startListeners() {
-  $(".convert-form-to-data").on("click", function () {
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition((position) => {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+  });
+} else {
+  //return ["5:47:11 AM", "5:55:59 PM", "11:51:35 AM"]; // Zurich, 25-09-2021
+}
+
+async function startListeners() {
+  var mainView = app.view.main;
+  app.request
+    .json(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}`)
+    .then((res) => {
+      var sunrise = res.data.results.sunrise;
+      var sunset = res.data.results.sunset;
+      var solar_noon = res.data.results.sunset;
+      console.log(sunrise);
+    });
+  $(".convert-form-to-data").on("click", async function () {
     if (
       document.querySelector(".input-invalid") ||
       document.querySelector("input[name=username]").value == "" ||
@@ -55,8 +75,8 @@ function startListeners() {
     } else {
       var formData = app.form.convertToData(".login-form");
       console.log("Logged in as " + formData.username);
+      mainView.router.navigate({ name: "home" });
     }
   });
 }
-
 export default app;
