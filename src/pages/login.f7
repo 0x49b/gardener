@@ -1,15 +1,62 @@
 <template>
-  <div class="page" data-name="login">
-    <!-- Scrollable page content-->
+  <div class="page" data-name="loginPage">
     <div class="page-content">
-      <div class="block block-strong">
-        <p>Here is your blank Framework7 app. Let's see what we have here.</p>
+      <div class="login-screen-title">
+        <img src="../img/migros-m.svg" height="100px" />
       </div>
+      <form class="login-form">
+        <div class="list inset no-hairlines">
+          <ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <input
+                    required
+                    validate
+                    type="text"
+                    name="username"
+                    placeholder="USERNAME"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    validate
+                    placeholder="PASSWORD"
+                  />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list inset" id="loginBtnParentDiv">
+          <div>
+            <a
+              id="loginBtn"
+              class="button button-large button-fill convert-form-to-data"
+              href="#"
+              >LOGIN</a
+            >
+          </div>
+          <div class="block-footer">
+            <p>
+              Gardener. <br />A project realised by Florian, Prasun and Jeremiah
+              at HackZurich 2021
+            </p>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </template>
 <script>
-export default () => {
-  return $render;
+  export default () => {
+    return $render;
   };
 </script>

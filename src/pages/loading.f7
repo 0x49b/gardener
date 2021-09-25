@@ -1,16 +1,15 @@
 <template>
-  <div class="page" data-name="loading">
+  <div class="page" data-name="home">
     <!-- Scrollable page content-->
     <div class="page-content">
       <div class="block block-strong">
-        <p>Here is your blank Framework7 app. Let's see what we have here.</p>
+        <div class="button" href="/login/">Test</div>
       </div>
-
     </div>
   </div>
 </template>
 <script>
-export default () => {
-  return $render;
-}
+  export default () => {
+    return $render;
+  };
 </script>
