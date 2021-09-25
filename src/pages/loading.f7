@@ -3,7 +3,15 @@
     <!-- Scrollable page content-->
     <div class="page-content">
 
-      <h1> THis is some Test on the</h1>
+     
+      
+
+        <img class="floating loadingScreenCloud" id="loadingScreenCloudLeft" src="../img/cloud-left.svg" alt="cloud-left"/>
+        <img class="floating1 loadingScreenCloud" id="loadingScreenCloudRight" src="../img/cloud-right.svg" alt="cloud-right"/>
+
+        <img id="loadingScreenMigrosM" src="../img/migros-m.svg" height="300px" />
+
+        <p id="loadingScreenMessage" class="pixel"></p>
 
 
     </div>
@@ -11,6 +19,39 @@
 </template>
 <script>
     export default () => {
+
+
+        window.addEventListener('load', function() {
+            const loadingMessages = [
+                "Starting your Garden",
+                "Raking Grounds",
+                "Planting Trees",
+                "Watering Plants",
+                "Adjusting Sunlight",
+                "Hooray"
+            ]
+
+            let i = 1;
+
+            const loadingMessage = document.getElementById("loadingScreenMessage");
+
+            loadingMessage.innerText = loadingMessages[0];
+
+            setInterval(() => {
+
+                if (i < loadingMessages.length) {
+                    loadingMessage.innerText = loadingMessages[i]
+                    i++
+                } else {
+                    loadingMessage.innerText = loadingMessages[loadingMessages.length - 1]
+
+                }
+
+
+            }, Math.random() * (3500 - 1000) + 1000);
+
+        });
+
         return $render;
     };
 </script>
