@@ -22,5 +22,5 @@ public class User {
     private int groupPoint;
     private boolean eligibleForReward;
     private HashMap<Integer,Integer> userRatingHistory;
-
+    private double avgUserPoint;
 }
