@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 402 402" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-20116.2,-12406.8)">
+        <g id="flower-pot-day" transform="matrix(0.140877,0,0,0.106814,19677.1,12449)">
+            <rect x="3116.62" y="-395.303" width="2853.52" height="3759.57" style="fill:none;"/>
+            <g transform="matrix(9.50195,0,0,16.3463,-38282.7,-35648.8)">
+                <g transform="matrix(0.503448,0.0294613,3.98463e-16,0.911235,-1690.45,367.622)">
+                    <rect x="12031.9" y="1662.02" width="342.561" height="139.763" style="fill:rgb(193,118,83);"/>
+                </g>
+                <g transform="matrix(0.516501,0.0302252,8.32418e-17,0.212497,-1851.98,1496.33)">
+                    <rect x="12031.9" y="1662.02" width="342.561" height="139.763" style="fill:rgb(176,97,60);"/>
+                </g>
+                <g transform="matrix(0.319835,-0.125559,-8.48794e-18,0.912304,691.212,2241.21)">
+                    <rect x="12031.9" y="1662.02" width="342.561" height="139.763" style="fill:rgb(162,97,71);"/>
+                </g>
+                <g transform="matrix(0.327913,-0.12873,-5.32616e-17,0.211848,593.956,3420.28)">
+                    <rect x="12031.9" y="1662.02" width="342.561" height="139.763" style="fill:rgb(142,83,59);"/>
+                </g>
+                <g transform="matrix(1.10478,0.0646505,-1.83094,0.71878,-6120.95,41.03)">
+                    <rect x="12650.7" y="1841.71" width="111.851" height="42.428" style="fill:rgb(89,47,29);"/>
+                </g>
+                <g transform="matrix(1.31773,0.0771127,-2.22329,0.872804,-8098.68,-408.167)">
+                    <rect x="12639.6" y="1883.2" width="134.213" height="3.435" style="fill:rgb(194,130,101);"/>
+                </g>
+                <g transform="matrix(1.31773,0.0771127,-2.22329,0.872804,-7993.95,-449.28)">
+                    <rect x="12639.6" y="1883.2" width="134.213" height="3.435" style="fill:rgb(194,130,101);"/>
+                </g>
+                <g transform="matrix(1.30436,0,0,1,-7878.84,-395.303)">
+                    <path d="M9594.54,2573.79L9588.69,2576.78L9606.68,2574.71L9520.57,2618.81L9514.25,2614.9L9508.39,2617.9L9594.54,2573.79L9594.54,2573.79Z" style="fill:rgb(194,130,101);"/>
+                </g>
+                <g transform="matrix(1.30436,0,0,1,-7878.84,-395.303)">
+                    <path d="M9477.39,2568.29L9471.1,2564.36L9384.97,2608.47L9402.95,2606.4L9397.09,2609.4L9384.96,2608.47L9384.95,2608.47L9397.1,2609.4L9477.39,2568.29Z" style="fill:rgb(194,130,101);"/>
+                </g>
+                <g transform="matrix(1.30436,0,0,1,-7878.84,-395.303)">
+                    <path d="M9402.99,2606.38L9419.51,2607.67L9402.99,2616.12L9477.46,2578L9477.46,2568.26L9402.99,2606.38Z" style="fill:rgb(142,83,59);"/>
+                </g>
+                <g transform="matrix(1.30436,0,0,1,-7878.84,-395.303)">
+                    <path d="M9477.46,2577.99L9477.46,2568.29L9588.69,2576.78L9572.2,2585.22L9588.69,2586.48L9477.46,2577.99Z" style="fill:rgb(176,97,60);"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
