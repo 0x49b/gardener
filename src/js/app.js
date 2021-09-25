@@ -84,7 +84,7 @@ async function startListeners() {
             const today = new Date();
 
 
-            if (today <= eveningTime) {
+            if (today >= eveningTime) {
                 console.log("nsdnvfklassas");
                 greetingText = greetingText + " Evening!";
                 greetingTitle.text(greetingText);
@@ -137,7 +137,7 @@ async function startListeners() {
             console.log("Logged in as " + formData.username);
             mainView.router.navigate({name: "loading"});
             mainView.router.on("routeChanged", () => {
-                loadingUserData(mainView, false);
+                loadingUserData(mainView, true);
             })
         }
     });

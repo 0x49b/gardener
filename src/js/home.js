@@ -3,13 +3,18 @@ import {getFromLocalStorage, getDay} from "./helper";
 
 export {loadingHome}
 
-const loadingHome = () => {
+const loadingHome = (mainView) => {
     setGardenerBanner()
     setCounterColor()
     checkCloudsAndMoon()
     setPlant()
+
     setPoints()
     updateCounter()
+
+
+
+
 }
 
 

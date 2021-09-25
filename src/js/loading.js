@@ -32,14 +32,14 @@ const loadingUserData = function (mainView, skip = false) {
                 loadingMessage.innerText = loadingMessages[loadingMessages.length - 1];
                 mainView.router.navigate({name: "home"})
                 mainView.router.on("routeChanged", () => {
-                    loadingHome();
+                    loadingHome(mainView);
                 })
             }
         }, Math.random() * (3500 - 1000) + 1000);
     } else {
         mainView.router.navigate({name: "home"})
         mainView.router.on("routeChanged", () => {
-            loadingHome();
+            loadingHome(mainView);
         })
     }
 }
