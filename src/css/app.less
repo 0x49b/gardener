@@ -5,6 +5,8 @@
   --f7-theme-color-shade: #d65700;
   --f7-theme-color-tint: #ff7f29;
 }
+
+
 @media screen and (orientation: landscape) {
   html {
     transform: rotate(-90deg);
@@ -79,67 +81,29 @@
 
 #loadingScreenMessage {
   position: relative;
-  top: 5em;
-  font-size: 20px;
+  font-size: 1.5em;
+  top: 20vh;
 }
 
 #loadingScreenMigrosM {
   position: relative;
-  top: 5em;
+  top: 20vh;
+  width: 60vw;
 }
 
-#loadingScreenCloudLeft {
-  position: relative;
-  left: -2.5em;
+
+#mainScreenCloudLeft{
+  position: fixed;
+  top: 25vh;
+  left: -30vw;
 }
 
-#loadingScreenCloudRight {
-  position: relative;
-  right: -2.5em;
-  top: 1em;
+#mainScreenCloudRight{
+  position: fixed;
+  left: 8vh;
+  top: 35vh;
 }
 
-#mainScreenCloudLeft {
-  position: relative;
-  top: 12em;
-  left: -0.5em;
-}
-
-#mainScreenCloudRight {
-  position: relative;
-  right: -2.5em;
-  top: 15em;
-}
-
-.floating {
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  margin-left: 30px;
-  margin-top: 5px;
-}
-
-.floating1 {
-  animation-name: floating;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  margin-left: 30px;
-  margin-top: 5px;
-}
-
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 15px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
-}
 
 .fab a {
   background-color: transparent;
@@ -174,4 +138,64 @@
   margin: 4rem;
   position: absolute;
   bottom: 2em;
+}
+
+.gardener-block{
+  width:100vw;
+  height:45px;
+  position: absolute;
+  bottom: 10px; 
+  text-align: center;
+}
+
+.gardener-block > img{
+  width: 40vw;
+}
+
+
+
+/*
+All CSS Animations
+*/
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.floating1 {
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+
+.rotating {
+   -webkit-animation: rotateY 1s infinite linear;
+  animation: rotateY 7s infinite linear;
+}
+@-webkit-keyframes rotateY {
+  to { -webkit-transform: rotateY(360deg); }
+}
+@keyframes rotateY {
+  to { transform: rotateY(360deg); }
 }

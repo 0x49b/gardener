@@ -38,32 +38,36 @@
       <img class="flowerarea" src="../assets/img/full-plant-l3-day.svg" />
 
       <div class="block flowerDiv"></div>
+
+      <div class="gardener-block">
+        <img id="gardener-font" src="../assets//img/gardener-night.svg"/>
+    </div>
     </div>
   </div>
 </template>
 <script>
-  export default () => {
-    window.addEventListener("load", () => {
-      const counters = document.querySelectorAll(".count");
-      const speed = 500;
+    export default () => {
+        window.addEventListener("load", () => {
+            const counters = document.querySelectorAll(".count");
+            const speed = 500;
 
-      counters.forEach((counter) => {
-        const updateCount = () => {
-          const target = parseInt(counter.getAttribute("data-target"));
-          const count = parseInt(counter.innerText);
-          const increment = Math.trunc(target / speed);
+            counters.forEach((counter) => {
+                const updateCount = () => {
+                    const target = parseInt(counter.getAttribute("data-target"));
+                    const count = parseInt(counter.innerText);
+                    const increment = Math.trunc(target / speed);
 
-          if (count < target) {
-            counter.innerText = count + increment;
-            setTimeout(updateCount, 1);
-          } else {
-            counter.innerText = target;
-          }
-        };
-        updateCount();
-      });
-    });
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        });
 
-    return $render;
-  };
+        return $render;
+    };
 </script>
