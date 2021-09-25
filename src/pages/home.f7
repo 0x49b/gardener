@@ -2,23 +2,11 @@
   <div class="page" data-name="homePage" id="page_">
     <div class="navbar navbar-transparent">
       <div class="navbar-bg"></div>
-      <div class="navbar-inner">
-        <!-- <div class="left">
-          <a href="#" class="link back">
-            <i class="icon icon-back"></i>
-            <span>Back</span>
-          </a> 
-        </div>
-        <div class="right">
-          <a href="#" class="link">
-            <i class="icon another-icon"></i>
-            <span>Menu</span>
-          </a>
-        </div>-->
-      </div>
+      <div class="navbar-inner"></div>
     </div>
     <!-- Scrollable page content-->
     <div class="page-content">
+      <div class="block-title greeting" style="text-align: center"></div>
       <div class="fab fab-extended fab-left-top">
         <a href="#">
           <img class="img-seed" src="../assets/img/seed.svg" />

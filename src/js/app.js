@@ -63,6 +63,7 @@ async function startListeners() {
   var afternoontime;
   var morningTime;
   var eveningTime;
+  const greetingTitle = $(".greeting");
   app.request
     .json(
       `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today&formatted=0`
@@ -82,28 +83,31 @@ async function startListeners() {
       eveningTime = new Date(nighttime.getTime() - timeDiff / 3);
 
       const today = new Date();
-      console.log(today);
-      console.log(eveningTime);
 
       if (today >= eveningTime) {
         console.log("nsdnvfklassas");
         greetingText = greetingText + " Evening!";
-        $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
+        greetingTitle.text(greetingText);
+        $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
       } else if (today >= afternoontime) {
         console.log("asasasass");
         greetingText = greetingText + " Afteroon!";
+        greetingTitle.text(greetingText);
         $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
       } else if (today >= datetime) {
         console.log("nsdnvfkl");
         greetingText = greetingText + " Morning!";
+        greetingTitle.text(greetingText);
         $("#page_").css("background-image", "url(../assets/img/sky-day.svg)");
       } else if (today >= morningTime) {
         console.log("nsdnvfkl");
         greetingText = greetingText + " Morning!";
+        greetingTitle.text(greetingText);
         $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
       } else if (today < morningTime) {
         console.log("nsdnvfkl");
         greetingText = greetingText + " Night!";
+        greetingTitle.text(greetingText);
         $("#page_").css("background-image", "url(../assets/img/sky-night.svg)");
       }
     });
