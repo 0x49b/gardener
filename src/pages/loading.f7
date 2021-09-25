@@ -1,15 +1,57 @@
 <template>
-  <div class="page" data-name="home">
+  <div class="page" data-name="loadingPage">
     <!-- Scrollable page content-->
     <div class="page-content">
-      <div class="block block-strong">
-        <div class="button" href="/login/">Test</div>
-      </div>
+
+     
+      
+
+        <img class="floating loadingScreenCloud" id="loadingScreenCloudLeft" src="../img/cloud-left.svg" alt="cloud-left"/>
+        <img class="floating1 loadingScreenCloud" id="loadingScreenCloudRight" src="../img/cloud-right.svg" alt="cloud-right"/>
+
+        <img id="loadingScreenMigrosM" src="../img/migros-m.svg" height="300px" />
+
+        <p id="loadingScreenMessage" class="pixel"></p>
+
+
     </div>
   </div>
 </template>
 <script>
-  export default () => {
-    return $render;
-  };
+    export default () => {
+
+
+        window.addEventListener('load', function() {
+            const loadingMessages = [
+                "Starting your Garden",
+                "Raking Grounds",
+                "Planting Trees",
+                "Watering Plants",
+                "Adjusting Sunlight",
+                "Hooray"
+            ]
+
+            let i = 1;
+
+            const loadingMessage = document.getElementById("loadingScreenMessage");
+
+            loadingMessage.innerText = loadingMessages[0];
+
+            setInterval(() => {
+
+                if (i < loadingMessages.length) {
+                    loadingMessage.innerText = loadingMessages[i]
+                    i++
+                } else {
+                    loadingMessage.innerText = loadingMessages[loadingMessages.length - 1]
+
+                }
+
+
+            }, Math.random() * (3500 - 1000) + 1000);
+
+        });
+
+        return $render;
+    };
 </script>
