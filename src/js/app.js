@@ -1,5 +1,6 @@
-import $, { val, value } from "dom7";
+import $, {val, value} from "dom7";
 import Framework7 from "framework7/bundle";
+import {loadingUserData} from "./loading";
 
 // Import F7 Styles
 import "framework7/framework7-bundle.css";
@@ -23,10 +24,10 @@ var app = new Framework7({
     component: App, // App main component
 
     on: {
-        init: function() {
+        init: function () {
             console.log("App initialized");
         },
-        pageInit: async function() {
+        pageInit: async function () {
             console.log("Page initialized");
             await startListeners();
         },
@@ -121,7 +122,7 @@ async function startListeners() {
             }
         });
 
-    $(".convert-form-to-data").on("click", async function() {
+    $(".convert-form-to-data").on("click", async function () {
         if (
             document.querySelector(".input-invalid") ||
             document.querySelector("input[name=username]").value == "" ||
@@ -131,43 +132,13 @@ async function startListeners() {
         } else {
             var formData = app.form.convertToData(".login-form");
             console.log("Logged in as " + formData.username);
-            mainView.router.navigate({ name: "loading" });
-
-
-
+            mainView.router.navigate({name: "loading"});
+            mainView.router.on("routeChanged", () => {
+                loadingUserData(mainView);
+            })
         }
     });
-}
 
-
-
-function loadingAnimation() {
-
-
-    const loadingMessages = [
-        "Starting your Garden",
-        "Raking Grounds",
-        "Planting Trees",
-        "Watering Plants",
-        "Adjusting Sunlight",
-        "Hooray",
-    ];
-
-    let i = 1;
-
-    const loadingMessage = document.getElementById("loadingScreenMessage");
-
-    loadingMessage.innerText = loadingMessages[0];
-
-    setInterval(() => {
-        if (i < loadingMessages.length) {
-            loadingMessage.innerText = loadingMessages[i];
-            i++;
-        } else {
-            loadingMessage.innerText =
-                loadingMessages[loadingMessages.length - 1];
-        }
-    }, Math.random() * (3500 - 1000) + 1000);
 
 }
 
