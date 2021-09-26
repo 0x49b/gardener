@@ -1,13 +1,14 @@
-export {getDay, addToLocaleStorage, getFromLocalStorage}
+export { getDay, addToLocaleStorage, getFromLocalStorage };
 
 const getDay = () => {
-    return localStorage.getItem('day').toLowerCase() === 'true' ?? true
-}
+  let item = localStorage.getItem("day");
+  return item.toLowerCase() === "true" ?? true;
+};
 
 const addToLocaleStorage = (key, value) => {
-    localStorage.setItem(key, value)
-}
+  localStorage.setItem(key, value);
+};
 
 const getFromLocalStorage = (key) => {
-    return localStorage.getItem(key) ?? ""
-}
+  return localStorage.getItem(key) ?? "";
+};
