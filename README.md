@@ -21,6 +21,8 @@ The Application is built as a PWA with modern Webtechnologies. The Framework we 
 
 This repo contains the frontend side code. For backend please click on this [link](https://github.com/jerryzhch/garden-backend).
 
+In a releasing phase later on the open source native runtime [Capacitor](https://capacitorjs.com/) will be used for building the corresponding native applications.
+
 ## Challenges we ran into
 We never worked as a team together before HackZurich 2021. Few Products from Sales Data is not present in the Product Data. So we needed some clarification from the Migros Team. We also needed Migros Team for clarifications about dependencies between the rating and the carbon emission data. From the 2 Frontend developers one did not know Framework7, so lot of reading the documentation and experimenting.
 Slow Internet connection on site ;-)  
