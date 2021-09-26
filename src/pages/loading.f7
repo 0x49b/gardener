@@ -1,0 +1,15 @@
+<template>
+  <div class="page" data-name="loadingPage" id="page_">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+      <img id="loadingScreenMigrosM" src="../assets/img/migros-m.svg" />
+
+      <p id="loadingScreenMessage" class="block pixel"></p>
+    </div>
+  </div>
+</template>
+<script>
+  export default () => {
+    return $render;
+  };
+</script>
