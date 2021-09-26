@@ -47,3 +47,8 @@ We have a lot of ideas apart from our prototype how to make it more user centric
 ![Home_Gardener_dark](https://github.com/jerryzhch/gardener/blob/dev-back/documentation/Home_Gardener_dark.jpeg)
 ![Home_Gardener](https://github.com/jerryzhch/gardener/blob/dev-back/documentation/Popover_Gardener.jpeg)
 ![Popop_Gardender_dark](https://github.com/jerryzhch/gardener/blob/dev-back/documentation/Popopver_Gardener_dark.jpeg)
+
+## Developers (Team Gardeners)
+[Florian Thiévent](https://www.linkedin.com/in/florian-thi%C3%A9vent-a03421143/)
+[Prasun Saurabh](https://www.linkedin.com/in/prasun-saurabh-010378118/)
+[Jeremiah Agboola](https://www.linkedin.com/in/jeremiah-agboola-049929173/)
