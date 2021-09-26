@@ -116,6 +116,6 @@ out/
 .vscode/
 package-lock.json
 
-/www/*,idea
+/www
 
 *.cache
