@@ -10,7 +10,7 @@ During launch we randomly show climate change statistics
 
 We have a lot of ideas apart from our prototype how to make it more user centric and involve them a lot while doing something sustainable for the society.
 
-[YouTube Presentaion](https://www.youtube.com/watch?v=AeZBO5bceac=
+[YouTube Presentaion](https://www.youtube.com/watch?v=AeZBO5bceac)
 
 ## Dev Technologies used
 [Framework7](https://framework7.io/)
