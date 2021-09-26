@@ -85,7 +85,7 @@ async function startListeners() {
             const today = new Date();
 
 
-            if (today <= eveningTime) {
+            if (today >= eveningTime) {
                 console.log("nsdnvfklassas");
                 greetingText = greetingText + " Evening!";
                 greetingTitle.text(greetingText);
