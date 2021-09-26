@@ -42,7 +42,7 @@ var app = new Framework7({
       : {},
 });
 var lat = 46.743552;
-var lng = 9.5551488;
+var lng = 9.5551488; //Zurich Technopark
 
 if ("geolocation" in navigator) {
   navigator.geolocation.getCurrentPosition((position) => {
