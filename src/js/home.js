@@ -1,4 +1,4 @@
-import {getFromLocalStorage, getDay} from "./helper";
+import {getDay, getFromLocalStorage} from "./helper";
 
 export {loadingHome}
 

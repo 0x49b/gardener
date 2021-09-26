@@ -1,4 +1,4 @@
-import $, {add, val, value} from "dom7";
+import $ from "dom7";
 import Framework7 from "framework7/bundle";
 import {loadingUserData} from "./loading";
 import {addToLocaleStorage} from "./helper";

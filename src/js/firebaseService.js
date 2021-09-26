@@ -1,6 +1,4 @@
-import { initializeApp } from "firebase/app";
-import $$ from "dom7";
-import app from "./app";
+import {initializeApp} from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCXhTt06k5cMNZL1pdvltV5k9RdAX3c5Fs",
