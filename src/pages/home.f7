@@ -1,112 +1,99 @@
 <template>
-  <div class="page" data-name="homePage" id="page_">
-    <div class="navbar navbar-transparent">
-      <div class="navbar-bg"></div>
-      <div class="navbar-inner"></div>
+    <div class="page" data-name="homePage" id="page_">
+
+        <div class="navbar navbar-transparent">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner"></div>
+        </div>
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <!--div class="block-title greeting" style="text-align: center"></div-->
+            <div class="fab fab-extended fab-left-top">
+                <a href="#">
+                    <img class="img-seed" src="../assets/img/seed.svg"/>
+                    <div class="fab-text count pixel" id="point-counter" data-target="2585">0</div>
+                </a>
+            </div>
+
+
+            <div class="levelbox">
+                <div class="pixel" id="level-label">Level:</div>
+            </div>
+
+            <div class="fab fab-right-top">
+                <a class=".popup-open" data-popup="user-modal" href="#">
+                    <img class="img-info" id="user-info" src="../assets/img/farmer.svg"/>
+                </a>
+                <!--a href="">
+                  <img class="img-info" src="../assets/img/watering-can.svg"/>
+              </a>
+                <a href=""><img class="img-info" src="../assets/img/info.svg" /></a-->
+            </div>
+            <div>
+                <img
+                        class="floating loadingScreenCloud"
+                        id="mainScreenCloudLeft"
+                        src="../assets/img/cloud-left.svg"
+                        alt="cloud-left"/>
+                <img
+                        class="floating1 loadingScreenCloud"
+                        id="mainScreenCloudRight"
+                        src="../assets/img/cloud-right.svg"
+                        alt="cloud-right"/>
+                <img
+                        id="mainScreenMoon"
+                        src="../assets/img/moon.svg"
+                        alt="cloud-right"/>
+
+            </div>
+            <img class="flowerarea" id="plant-level" src="../assets/img/full-plant-l1-day.svg"/>
+
+            <div class="block flowerDiv"></div>
+
+            <div class="gardener-block">
+                <img id="gardener-font" src="../assets//img/gardener-night.svg"/>
+                <div class="greeting" style="text-align: center"></div>
+            </div>
+        </div>
+
+
+        <div class="popup user-modal" id="user-modal" data-swipe-to-close="to-bottom" style="padding: 50px;">
+
+            <h1>Hello <span id="user-modal-username"></span></h1>
+            <p>Here are some numbers how you doing.</p>
+            <ul class="points-list">
+                <li>Current points: <b><span id="user-modal-points"></span></b></li>
+                <li>Points needed for next Level: <span id="user-modal-points-next"></span></li>
+                <li>
+                    <div class="progressbar" id="user-modal-progess" data-progress="50">
+                        <span></span>
+                    </div>
+                </li>
+            </ul>
+
+
+            <h1>Points History</h1>
+            <div id="user-modal-history"></div>
+
+
+
+            <h1>Rewards</h1>
+            <div id="user-modal-reward"></div>
+
+
+            <div class="info-container">
+                <div class="swipe-to-dismiss">Swipe down to dismiss</div>
+                <i class="f7-icons" style="margin-top:5px;">arrow_down_square_fill</i>
+            </div>
+
+        </div>
+
+
     </div>
-    <!-- Scrollable page content-->
-    <div class="page-content">
-      <!--div class="block-title greeting" style="text-align: center"></div-->
-      <div class="fab fab-extended fab-left-top">
-        <a href="#">
-          <img class="img-seed" src="../assets/img/seed.svg" />
-          <div
-            class="fab-text count pixel"
-            id="point-counter"
-            data-target="2585"
-          >
-            0
-          </div>
-        </a>
-      </div>
 
-      <div class="levelbox">
-        <div class="pixel" id="level-label">Level:</div>
-      </div>
-
-      <div class="fab fab-right-top">
-        <a class=".popup-open" data-popup="user-modal" href="#">
-          <img class="img-info" id="user-info" src="../assets/img/farmer.svg" />
-        </a>
-      </div>
-      <div>
-        <img
-          class="floating loadingScreenCloud"
-          id="mainScreenCloudLeft"
-          src="../assets/img/cloud-left.svg"
-          alt="cloud-left"
-        />
-        <img
-          class="floating1 loadingScreenCloud"
-          id="mainScreenCloudRight"
-          src="../assets/img/cloud-right.svg"
-          alt="cloud-right"
-        />
-        <img
-          id="mainScreenMoon"
-          src="../assets/img/moon.svg"
-          alt="cloud-right"
-        />
-      </div>
-      <img
-        class="flowerarea"
-        id="plant-level"
-        src="../assets/img/full-plant-l1-day.svg"
-      />
-
-      <div class="block flowerDiv"></div>
-
-      <div class="gardener-block">
-        <img id="gardener-font" src="../assets//img/gardener-night.svg" />
-        <div class="greeting" style="text-align: center"></div>
-      </div>
-    </div>
-
-    <div
-      class="popup user-modal"
-      id="user-modal"
-      data-swipe-to-close="to-bottom"
-      style="padding: 50px"
-    >
-      <div class="info-container">
-        <div class="swipe-to-dismiss">Swipe down to dismiss</div>
-        <i class="f7-icons" style="margin-top: 5px">arrow_down_square_fill</i>
-      </div>
-      <br />
-      <h1>Hello <span id="user-modal-username"></span></h1>
-      <p>Here are some numbers how you doing.</p>
-      <ul class="points-list">
-        <li>
-          Current points: <b><span id="user-modal-points"></span></b>
-        </li>
-        <li>
-          Points needed for next Level:
-          <span id="user-modal-points-next"></span>
-        </li>
-        <li>
-          <div class="progressbar" id="user-modal-progess" data-progress="50">
-            <span></span>
-          </div>
-        </li>
-      </ul>
-
-      <h1>Points History</h1>
-      <div id="user-modal-history"></div>
-
-      <h1>Rewards</h1>
-      <div id="user-modal-reward"></div>
-
-      <div class="block-footer" id="aboutApp">
-        <p>
-          Gardener. <br />A project realised by Florian, Prasun and Jeremiah at
-          HackZurich 2021
-        </p>
-      </div>
-    </div>
-  </div>
 </template>
 <script type="module">
-  export default () => {
-    return $render;
-  };
+    export default () => {
+        return $render;
+    };
 </script>
