@@ -55,6 +55,7 @@ if ("geolocation" in navigator) {
 }
 
 async function startListeners() {
+    addToLocaleStorage('day', true)
     var mainView = app.view.main;
     var greetingText = "Good ";
     var daytime;
@@ -84,7 +85,7 @@ async function startListeners() {
             const today = new Date();
 
 
-            if (today >= eveningTime) {
+            if (today <= eveningTime) {
                 console.log("nsdnvfklassas");
                 greetingText = greetingText + " Evening!";
                 greetingTitle.text(greetingText);
@@ -100,7 +101,7 @@ async function startListeners() {
                 $("body").removeClass("theme-dark");
                 addToLocaleStorage('day', true);
 
-            } else if (today >= datetime) {
+            } else if (today >= daytime) {
                 console.log("nsdnvfkl");
                 greetingText = greetingText + " Morning!";
                 greetingTitle.text(greetingText);
@@ -125,25 +126,13 @@ async function startListeners() {
             }
         });
 
-    $(".convert-form-to-data").on("click", async function () {
-        if (
-            document.querySelector(".input-invalid") ||
-            document.querySelector("input[name=username]").value == "" ||
-            document.querySelector("input[name=password]").value == ""
-        ) {
-            app.dialog.alert("Please provide correct data", "Invalid Input(s)");
-        } else {
-            var formData = app.form.convertToData(".login-form");
-            console.log("Logged in as " + formData.username);
-            mainView.router.navigate({name: "loading"});
-            mainView.router.on("routeChanged", () => {
-                loadingUserData(mainView, false);
-            })
-        }
-    });
+    loadingUserData(mainView, false, app);
+
+    $("#user-info").on("click", () => {
+            app.popup.open("#user-modal", true)
+    })
+
 }
-
-
 
 
 export default app;

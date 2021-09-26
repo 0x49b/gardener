@@ -1,57 +1,59 @@
 import {loadingHome} from "./home";
-import {addToLocaleStorage} from "./helper";
+import {addToLocaleStorage, getDay, getFromLocalStorage} from "./helper";
 
 export {loadingUserData}
 
-const loadingUserData = function (mainView, skip = false) {
 
-    setUserLevel()
-    setUserPoints()
+const setBackground = () => {
+    const page = document.getElementById("page_")
+    getDay() ? page.style.backgroundImage = "url(../assets/img/sky-day.svg)" : page.style.backgroundImage = "url(../assets/img/sky-night.svg)";
+}
 
-    if (!skip) {
-        const loadingMessages = [
-            "Starting your Garden",
-            "Raking Grounds",
-            "Planting Trees",
-            "Watering Plants",
-            "Adjusting Sunlight",
-            "Hooray",
-        ];
+const updateLoadingMessage = (message) => {
+    const loadingMessage = document.getElementById("loadingScreenMessage");
+    setTimeout(() => {
+        loadingMessage.innerText = message
+    }, 1)
+}
 
-        let i = 1;
 
-        const loadingMessage = document.getElementById("loadingScreenMessage");
+const loadingUserData = function (mainView, skip = false, app) {
 
-        loadingMessage.innerText = loadingMessages[0];
 
-        setInterval(() => {
-            if (i < loadingMessages.length) {
-                loadingMessage.innerText = loadingMessages[i];
-                i++;
-            } else {
-                loadingMessage.innerText = loadingMessages[loadingMessages.length - 1];
-                mainView.router.navigate({name: "home"})
-                mainView.router.on("routeChanged", () => {
-                    loadingHome(mainView);
-                })
-            }
-        }, Math.random() * (3500 - 1000) + 1000);
-    } else {
+    app.request.json("https://migros-hackzurich-backend.herokuapp.com/api/v1/user?id=101361").then((res) => {
+
+        updateLoadingMessage("Entering your Garden")
+        setBackground()
+        updateLoadingMessage("Raking ground")
+
+        addToLocaleStorage('user', JSON.stringify(res.data))
+        addToLocaleStorage('points', res.data.userPoint)
+
+        updateLoadingMessage("Adding Plants")
+
+        setUserLevel()
+
+        updateLoadingMessage("Hooray !!!")
+
         mainView.router.navigate({name: "home"})
         mainView.router.on("routeChanged", () => {
-            loadingHome(mainView);
+            loadingHome(app);
         })
-    }
+    });
 }
 
 const setUserLevel = () => {
-    // TODO get user Lvl from Database. For MockupReason here it is set randomly
-    const lvl = parseInt(Math.random() * (3 - 1) + 1)
-    addToLocaleStorage('level', lvl)
-}
 
-const setUserPoints = () => {
-    //TODO get user points from Database For MockupReasons it is set randomly
-    const points = parseInt(Math.random() * (10000 - 1000) + 1000)
-    addToLocaleStorage('points', points)
+    let lvl = 1
+    const userPoints = parseInt(getFromLocalStorage('points')) ?? 0
+
+    if (userPoints < 3000) {
+        lvl = 1
+    } else if (userPoints > 3000 && userPoints < 10000) {
+        lvl = 2
+    } else if (userPoints > 10000 && userPoints < 20000) {
+        lvl = 3
+    }
+
+    addToLocaleStorage('level', lvl)
 }

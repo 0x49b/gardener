@@ -4,12 +4,12 @@ import MainPage from "../pages/home.f7";
 
 const routes = [
     {
-        path: "/",
+        path: "/login",
         name: "login",
         component: LoginPage,
     },
     {
-        path: "/loading",
+        path: "/",
         name: "loading",
         component: LoadingPage,
     },

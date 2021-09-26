@@ -15,9 +15,14 @@
                 </a>
             </div>
 
+
+            <div class="levelbox">
+                <div class="pixel" id="level-label">Level:</div>
+            </div>
+
             <div class="fab fab-right-top">
-                <a class="popup-open" data-popup="user-modal" href="#">
-                    <img class="img-info" id="user-info"  src="../assets/img/farmer.svg"/>
+                <a class=".popup-open" data-popup="user-modal" href="#">
+                    <img class="img-info" id="user-info" src="../assets/img/farmer.svg"/>
                 </a>
                 <!--a href="">
                   <img class="img-info" src="../assets/img/watering-can.svg"/>
@@ -52,8 +57,35 @@
         </div>
 
 
-        <div class="popup user-modal"  data-swipe-to-close="to-bottom">
-            Any HTML content goes here
+        <div class="popup user-modal" id="user-modal" data-swipe-to-close="to-bottom" style="padding: 50px;">
+
+            <h1>Hello <span id="user-modal-username"></span></h1>
+            <p>Here are some numbers how you doing.</p>
+            <ul class="points-list">
+                <li>Current points: <b><span id="user-modal-points"></span></b></li>
+                <li>Points needed for next Level: <span id="user-modal-points-next"></span></li>
+                <li>
+                    <div class="progressbar" id="user-modal-progess" data-progress="50">
+                        <span></span>
+                    </div>
+                </li>
+            </ul>
+
+
+            <h1>Points History</h1>
+            <div id="user-modal-history"></div>
+
+
+
+            <h1>Rewards</h1>
+            <div id="user-modal-reward"></div>
+
+
+            <div class="info-container">
+                <div class="swipe-to-dismiss">Swipe down to dismiss</div>
+                <i class="f7-icons" style="margin-top:5px;">arrow_down_square_fill</i>
+            </div>
+
         </div>
 
 
@@ -61,10 +93,7 @@
 
 </template>
 <script type="module">
-    import {loadingHome} from "../js/home";
-
     export default () => {
-        loadingHome();
         return $render;
     };
 </script>
